@@ -7,7 +7,7 @@ async function start() {
   const conn = await amqp.connect(RABBIT_URL);
   const ch = await conn.createChannel();
 
-  await ch.assertQueue(QUEUE, { durable: true });
+  await ch.assertQueue(QUEUE);
 
   console.log("👂 Aguardando mensagens na fila 7624");
 
@@ -35,4 +35,5 @@ async function start() {
 
 start();
 ;
+
 
